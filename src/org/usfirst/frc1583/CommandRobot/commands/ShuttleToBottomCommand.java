@@ -8,12 +8,11 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 package org.usfirst.frc1583.CommandRobot.commands;
-import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc1583.CommandRobot.Robot;
 /**
  *
  */
-public class ShuttleToBottomCommand extends Command
+public class ShuttleToBottomCommand extends ShuttleMovementBaseCommand
 {
     public ShuttleToBottomCommand()
     {
@@ -26,6 +25,7 @@ public class ShuttleToBottomCommand extends Command
     // Called just before this Command runs the first time
     protected void initialize()
     {
+        resetCounter();
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
@@ -35,6 +35,7 @@ public class ShuttleToBottomCommand extends Command
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()
     {
+        updateCounter();
         return Robot.armSubsystem.isBottomLimit();
     }
     // Called once after isFinished returns true

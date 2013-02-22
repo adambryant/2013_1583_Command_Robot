@@ -8,15 +8,12 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 package org.usfirst.frc1583.CommandRobot.commands;
-import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc1583.CommandRobot.Robot;
 /**
  *
  */
-public class ShuttleToBottomCountedCommand extends Command
+public class ShuttleToBottomCountedCommand extends ShuttleMovementBaseCommand
 {
-    private int count;
-
     public ShuttleToBottomCountedCommand( int count )
     {
         this.count = count;
@@ -29,27 +26,38 @@ public class ShuttleToBottomCountedCommand extends Command
     // Called just before this Command runs the first time
     protected void initialize()
     {
-        Robot.armSubsystem.resetCounter();
+        System.out.println("In ShuttleToBottomCountedCommand.initialize");
+
+        resetCounter();
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
     {
+        System.out.println("In ShuttleToBottomCountedCommand.execute");
+
         Robot.armSubsystem.shuttleDown();
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()
     {
+        System.out.println("In ShuttleToBottomCountedCommand.isFinished, count: " + count);
+
+        updateCounter();
         return Robot.armSubsystem.getCount() > count;
     }
     // Called once after isFinished returns true
     protected void end()
     {
+        System.out.println("In ShuttleToBottomCountedCommand.end");
+
         Robot.armSubsystem.stop();
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted()
     {
+        System.out.println("In ShuttleToBottomCountedCommand.interrupted");
+
         Robot.armSubsystem.stop();
     }
 }

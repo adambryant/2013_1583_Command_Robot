@@ -5,8 +5,8 @@
 package org.usfirst.frc1583.CommandRobot.commands.groups;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
-import org.usfirst.frc1583.CommandRobot.commands.CGCenterCommand;
-import org.usfirst.frc1583.CommandRobot.commands.ShuttleToBottomTimedCommand;
+import org.usfirst.frc1583.CommandRobot.Robot;
+import org.usfirst.frc1583.CommandRobot.commands.ShuttleToBottomCountedCommand;
 import org.usfirst.frc1583.CommandRobot.commands.ShuttleToTopCommand;
 
 /**
@@ -33,7 +33,7 @@ public class ResetCommandGroup extends CommandGroup
         // a CommandGroup containing them would require both the chassis and the
         // arm.
         addSequential( new ShuttleToTopCommand());
-        addSequential( new ShuttleToBottomTimedCommand(3.0));
+        addSequential( new ShuttleToBottomCountedCommand(Robot.armSubsystem.RESET_COUNT));
 //        addSequential( new CGCenterCommand() );
     }
 }

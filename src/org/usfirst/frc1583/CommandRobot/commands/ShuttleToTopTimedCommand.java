@@ -9,12 +9,11 @@
 // it from being updated in th future.
 package org.usfirst.frc1583.CommandRobot.commands;
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc1583.CommandRobot.Robot;
 /**
  *
  */
-public class ShuttleToTopTimedCommand extends Command
+public class ShuttleToTopTimedCommand extends ShuttleMovementBaseCommand
 {
     private double delay;
     private Timer timer;
@@ -31,6 +30,7 @@ public class ShuttleToTopTimedCommand extends Command
     // Called just before this Command runs the first time
     protected void initialize()
     {
+        resetCounter();
         timer = new Timer();
         timer.start();
     }
@@ -42,6 +42,7 @@ public class ShuttleToTopTimedCommand extends Command
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()
     {
+        updateCounter();
         return timer.get() > delay;
     }
     // Called once after isFinished returns true

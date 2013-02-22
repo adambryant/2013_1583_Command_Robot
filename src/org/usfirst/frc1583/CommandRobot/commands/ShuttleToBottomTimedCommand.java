@@ -14,7 +14,7 @@ import org.usfirst.frc1583.CommandRobot.Robot;
 /**
  *
  */
-public class ShuttleToBottomTimedCommand extends Command
+public class ShuttleToBottomTimedCommand extends ShuttleMovementBaseCommand
 {
     private double delay;
     private Timer timer;
@@ -33,6 +33,7 @@ public class ShuttleToBottomTimedCommand extends Command
     {
         timer = new Timer();
         timer.start();
+        resetCounter();
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
@@ -42,6 +43,7 @@ public class ShuttleToBottomTimedCommand extends Command
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()
     {
+        updateCounter();
         return timer.get() > delay;
     }
     // Called once after isFinished returns true
