@@ -18,7 +18,7 @@ public class Climb30Step1aCommandGroup extends CommandGroup
 
     public Climb30Step1aCommandGroup()
     {
-        addSequential( new ShuttleToBottomCountedCommand(Robot.armSubsystem.INTERVAL_COUNT * 2));
+        addSequential( new ShuttleToBottomCountedCommand(Robot.armSubsystem.INTERVAL_COUNT * 1));
         addSequential( new CGHalfBackCommand() );
     }
 }

@@ -7,9 +7,8 @@ package org.usfirst.frc1583.CommandRobot.commands.groups;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import org.usfirst.frc1583.CommandRobot.Robot;
 import org.usfirst.frc1583.CommandRobot.commands.CGCenterCommand;
-import org.usfirst.frc1583.CommandRobot.commands.CGFullForwardCommand;
 import org.usfirst.frc1583.CommandRobot.commands.CGHalfForwardCommand;
-import org.usfirst.frc1583.CommandRobot.commands.ShuttleToBottomCountedCommand;
+import org.usfirst.frc1583.CommandRobot.commands.DelayTimedCommand;
 import org.usfirst.frc1583.CommandRobot.commands.ShuttleToTopCommand;
 import org.usfirst.frc1583.CommandRobot.commands.ShuttleToTopCountedCommand;
 
@@ -26,5 +25,6 @@ public class Climb30Step4aCommandGroup extends CommandGroup
         addSequential( new CGHalfForwardCommand() );
         addSequential( new ShuttleToTopCommand());
         addSequential( new CGCenterCommand());
+        addSequential( new DelayTimedCommand(5.0));
     }
 }
