@@ -6,19 +6,20 @@ package org.usfirst.frc1583.CommandRobot.commands.groups;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import org.usfirst.frc1583.CommandRobot.Robot;
+import org.usfirst.frc1583.CommandRobot.commands.CGCenterCommand;
+import org.usfirst.frc1583.CommandRobot.commands.DelayTimedCommand;
 import org.usfirst.frc1583.CommandRobot.commands.ShuttleToBottomCountedCommand;
-import org.usfirst.frc1583.CommandRobot.commands.ShuttleToTopCommand;
 
 /**
  *
  * @author robotics
  */
-public class ResetCommandGroup extends CommandGroup
+public class Climb30Step3aCommandGroup extends CommandGroup
 {
 
-    public ResetCommandGroup()
+    public Climb30Step3aCommandGroup()
     {
-        addSequential( new ShuttleToTopCommand());
-        addSequential( new ShuttleToBottomCountedCommand(Robot.armSubsystem.RESET_COUNT));
+        addSequential( new ShuttleToBottomCountedCommand(Robot.armSubsystem.INTERVAL_COUNT));
+        addSequential( new CGCenterCommand() );
     }
 }

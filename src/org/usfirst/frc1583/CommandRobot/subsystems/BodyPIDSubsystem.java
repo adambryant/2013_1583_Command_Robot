@@ -52,10 +52,12 @@ public class BodyPIDSubsystem extends PIDSubsystem
         //                  to
         // enable() - Enables the PID controller.
         CG_FULL_BACK     = prefs.getDouble( "CgFullBack", 0.80);
-        CG_HALF_BACK     = prefs.getDouble( "CgHalfBack", 1.75);
-        CG_CENTER        = prefs.getDouble( "CgCenter", 2.50);
-        CG_HALF_FORWARD  = prefs.getDouble( "CgHalfForward", 3.15);
         CG_FULL_FORWARD  = prefs.getDouble( "CgFullForward", 3.75);
+        // Derive others from maxes
+        double diff = CG_FULL_FORWARD - CG_FULL_BACK;
+        CG_HALF_BACK     = CG_FULL_FORWARD - (diff * 0.75);
+        CG_CENTER        = CG_FULL_FORWARD - (diff * 0.5);
+        CG_HALF_FORWARD  = CG_FULL_FORWARD - (diff * 0.25);
     }
     public void initDefaultCommand()
     {

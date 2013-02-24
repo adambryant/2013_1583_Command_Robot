@@ -12,9 +12,9 @@ import org.usfirst.frc1583.CommandRobot.Robot;
 /**
  *
  */
-public class ShuttleToBottomCountedCommand extends ShuttleMovementBaseCommand
+public class ShuttleToTopCountedCommand extends ShuttleMovementBaseCommand
 {
-    public ShuttleToBottomCountedCommand( int count )
+    public ShuttleToTopCountedCommand( int count )
     {
         this.count = count;
         // Use requires() here to declare subsystem dependencies
@@ -26,25 +26,26 @@ public class ShuttleToBottomCountedCommand extends ShuttleMovementBaseCommand
     // Called just before this Command runs the first time
     protected void initialize()
     {
-        System.out.println("In ShuttleToBottomCountedCommand.initialize");
+        System.out.println("In ShuttleToTopCountedCommand.initialize");
 
         resetCounter();
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
     {
-        System.out.println("In ShuttleToBottomCountedCommand.execute");
+        System.out.println("In ShuttleToTopCountedCommand.execute");
 
-        Robot.armSubsystem.shuttleDown();
+        Robot.armSubsystem.shuttleUp();
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished()
     {
-        System.out.println("In ShuttleToBottomCountedCommand.isFinished, count: " + count);
+        System.out.println("In ShuttleToTopCountedCommand.isFinished, count: " + count);
 
         updateCounter();
+
         if (Robot.armSubsystem.getCount() > count ||
-            Robot.armSubsystem.isBottomLimit())
+            Robot.armSubsystem.isTopLimit())
         {
             return true;
         }
@@ -53,7 +54,7 @@ public class ShuttleToBottomCountedCommand extends ShuttleMovementBaseCommand
     // Called once after isFinished returns true
     protected void end()
     {
-        System.out.println("In ShuttleToBottomCountedCommand.end");
+        System.out.println("In ShuttleToTopCountedCommand.end");
 
         Robot.armSubsystem.stop();
     }
@@ -61,7 +62,7 @@ public class ShuttleToBottomCountedCommand extends ShuttleMovementBaseCommand
     // subsystems is scheduled to run
     protected void interrupted()
     {
-        System.out.println("In ShuttleToBottomCountedCommand.interrupted");
+        System.out.println("In ShuttleToTopCountedCommand.interrupted");
 
         Robot.armSubsystem.stop();
     }
