@@ -10,7 +10,6 @@
 package org.usfirst.frc1583.CommandRobot.actions;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc1583.CommandRobot.Robot;
 /**
  *
  */
