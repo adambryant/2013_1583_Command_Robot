@@ -90,16 +90,16 @@ public class Robot extends IterativeRobot
             autonomousCommand.cancel();
         }
 
-        if ( autonomousCommand instanceof Climb30Sequence1 )
-        {
-            teleopCommand = new Climb30CompleteSequence();
-            teleopCommand.start();
-        }
-        else if ( autonomousCommand instanceof Climb20Step1a )
-        {
-            teleopCommand = new Climb20CompleteSequence();
-            teleopCommand.start();
-        }
+//        if ( autonomousCommand instanceof Climb30Sequence1 )
+//        {
+//            teleopCommand = new Climb30CompleteSequence();
+//            teleopCommand.start();
+//        }
+//        else if ( autonomousCommand instanceof Climb20Step1a )
+//        {
+//            teleopCommand = new Climb20CompleteSequence();
+//            teleopCommand.start();
+//        }
     }
     /**
      * This function is called periodically during operator control

@@ -38,8 +38,8 @@ public class ArmSubsystem extends Subsystem
     {
         super();
         prefs = Preferences.getInstance();
-        UP_SPEED = prefs.getDouble( "ShuttleUpSpeed", 0.3);
-        DOWN_SPEED = prefs.getDouble( "ShuttleDownSpeed", -0.3);
+        UP_SPEED = prefs.getDouble( "ShuttleUpSpeed", 0.4);
+        DOWN_SPEED = prefs.getDouble( "ShuttleDownSpeed", -0.4);
         MAX_COUNT = prefs.getInt( "MaxCount", 5000);
         RESET_COUNT = prefs.getInt( "ResetCount", 1000);
         INTERVAL_COUNT = prefs.getInt( "IntervalCount", 100);
