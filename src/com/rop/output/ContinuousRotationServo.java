@@ -53,7 +53,7 @@ public class ContinuousRotationServo extends Servo implements PIDOutput, SpeedCo
 //        else if (motorSpeed > 0.3)
 //            motorSpeed = 0.3;
 
-//        System.out.println("speed: " + speed + "  incoming: " + incoming + "  motorSpeed: " + motorSpeed);
+        System.out.println("speed: " + speed + "  incoming: " + incoming + "  motorSpeed: " + motorSpeed);
 
         super.set( motorSpeed );
     }

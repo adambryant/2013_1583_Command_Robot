@@ -7,9 +7,7 @@ package org.usfirst.frc1583.CommandRobot.steps;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import org.usfirst.frc1583.CommandRobot.Robot;
 import org.usfirst.frc1583.CommandRobot.actions.CGFullBackAction;
-import org.usfirst.frc1583.CommandRobot.actions.CGHalfBackAction;
 import org.usfirst.frc1583.CommandRobot.actions.ShuttleToBottomCountedAction;
-import org.usfirst.frc1583.CommandRobot.actions.ShuttleToBottomTimedAction;
 
 /**
  *
