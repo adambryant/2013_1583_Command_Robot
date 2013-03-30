@@ -66,7 +66,7 @@ public class NewBodySubsystem extends Subsystem
     {
         System.out.println("In onTarget, setPoint: " + setPoint + "  pot: " + pot.getVoltage());
         
-        if (Math.abs( setPoint - pot.getVoltage()) < 0.1)
+        if (Math.abs( setPoint - pot.getVoltage()) < 0.01)
             return true;
         else
             return false;

@@ -22,7 +22,7 @@ public class Climb30Step5a extends CommandGroup
         addSequential( new ShuttleToBottomCountedAction(Robot.armSubsystem.INTERVAL_COUNT * 2));
         addSequential( new CGCenterAction() );
         addSequential( new DelayAction(5.0) );
-        addSequential( new ShuttleToBottomCountedAction(Robot.armSubsystem.INTERVAL_COUNT * 7));
+        addSequential( new ShuttleToBottomCountedAction(Robot.armSubsystem.INTERVAL_COUNT * 8));
 //        addSequential( new CGHalfForwardAction() );
     }
 }

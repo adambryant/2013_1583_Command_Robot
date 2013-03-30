@@ -5,6 +5,7 @@
 package org.usfirst.frc1583.CommandRobot.steps;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import org.usfirst.frc1583.CommandRobot.actions.CGFullForwardAction;
 import org.usfirst.frc1583.CommandRobot.actions.CGHalfForwardAction;
 import org.usfirst.frc1583.CommandRobot.actions.ShuttleToBottomAction;
 
@@ -19,5 +20,6 @@ public class Climb30Step1d extends CommandGroup
     {
         addSequential( new CGHalfForwardAction() );
         addSequential( new ShuttleToBottomAction());
+        addSequential( new CGFullForwardAction() );
     }
 }
