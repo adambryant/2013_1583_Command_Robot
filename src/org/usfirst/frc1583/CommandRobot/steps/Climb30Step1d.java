@@ -18,7 +18,7 @@ public class Climb30Step1d extends CommandGroup
 
     public Climb30Step1d()
     {
-        addSequential( new CGHalfForwardAction() );
+        addParallel( new CGHalfForwardAction() );
         addSequential( new ShuttleToBottomAction());
         addSequential( new CGFullForwardAction() );
     }

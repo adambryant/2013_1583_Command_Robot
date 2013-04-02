@@ -19,8 +19,8 @@ public class Climb30Step3b extends CommandGroup
 
     public Climb30Step3b()
     {
-        addSequential( new DelayAction(5.0) );
-        addSequential( new CGFullForwardAction());
+        addSequential( new DelayAction(10.0) );
+        addSequential( new CGHalfForwardAction());
         addSequential( new ShuttleToBottomAction());
     }
 }

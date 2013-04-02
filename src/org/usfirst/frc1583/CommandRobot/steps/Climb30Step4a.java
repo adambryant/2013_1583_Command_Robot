@@ -22,7 +22,8 @@ public class Climb30Step4a extends CommandGroup
 
     public Climb30Step4a()
     {
-        addSequential( new ShuttleToTopCountedAction(Robot.armSubsystem.INTERVAL_COUNT * 8));
+        addParallel( new CGHalfForwardAction() );
+        addSequential( new ShuttleToTopCountedAction(Robot.armSubsystem.INTERVAL_COUNT * 9));
         addSequential( new CGFullForwardAction() );
         addSequential( new ShuttleToTopAction());
         addSequential( new CGCenterAction());
