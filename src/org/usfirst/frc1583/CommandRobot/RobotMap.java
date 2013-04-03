@@ -9,12 +9,10 @@
 // it from being updated in th future.
 package org.usfirst.frc1583.CommandRobot;
 import com.rop.input.LimitSwitch;
-import com.rop.output.ContinuousRotationServo;
 import com.rop.output.RopTalon;
 import edu.wpi.first.wpilibj.AnalogChannel;
 import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -26,6 +24,7 @@ public class RobotMap
 {
     public static LimitSwitch armSubsystemTopLimit;
     public static LimitSwitch armSubsystemBottomLimit;
+    public static LimitSwitch hangerLimit;
     //public static ContinuousRotationServo bodyPIDSubsystemMotor;
     //public static RopTalon bodyPIDSubsystemMotor;
     public static SpeedController bodyPIDSubsystemMotor;
@@ -47,6 +46,9 @@ public class RobotMap
         // ### REAL ###
         armSubsystemBottomLimit = new LimitSwitch(1, 3, false);
 	LiveWindow.addSensor("ArmSubsystem", "BottomLimit", armSubsystemBottomLimit);
+
+        hangerLimit = new LimitSwitch(1, 4, false);
+        LiveWindow.addSensor( "ArmSubsystem", "HangerLimit", hangerLimit);
 
         // ### MODEL ###
 //        bodyPIDSubsystemMotor = new ContinuousRotationServo(1, 2);

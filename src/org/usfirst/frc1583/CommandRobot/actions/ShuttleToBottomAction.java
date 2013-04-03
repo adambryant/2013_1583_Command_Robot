@@ -36,7 +36,7 @@ public class ShuttleToBottomAction extends ShuttleMovementBaseAction
     protected boolean isFinished()
     {
         updateCounter();
-        return Robot.armSubsystem.isBottomLimit();
+        return (Robot.armSubsystem.isBottomLimit());
     }
     // Called once after isFinished returns true
     protected void end()
